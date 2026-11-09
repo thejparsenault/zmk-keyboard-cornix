@@ -49,3 +49,16 @@ build targets remain available in `build.yaml`.
 
 Keycode names and 50 bindings per layer were checked locally. Hardware typing
 feel and encoder direction still need testing after flashing.
+
+## Status indicators and Studio
+
+The indicator module is vendored under `modules/zmk-rgbled-widget`; upstream
+revision and local policy are recorded in `UPSTREAM.md`. Normal idle wake
+stays dark, with a 5-second grace period before showing an unresolved connection.
+Boot, Bluetooth profile changes, and active connection changes retain upstream
+animations. Low battery reminders are limited to every five minutes; critical
+battery escalates immediately. Charging detection remains based on USB power.
+Caps Lock and layer indications are disabled. A reboot retains startup lights.
+
+The direct left-central build includes `studio-rpc-usb-uart`; connect that half
+by USB to use Studio. Studio was already enabled in the board defaults.
