@@ -20,7 +20,10 @@ Bluetooth mappings, confirmed by the user: USER00/01/02 select host 1/2/3
 output-switch or split-peer-reset bindings are added.
 
 Encoder intent: left counterclockwise scrolls up, clockwise scrolls down;
-right counterclockwise lowers volume, clockwise raises it. These actions are
+right counterclockwise lowers volume, clockwise raises it. Scrolling uses
+100 wheel units/second with a 10 ms reporting period and no acceleration,
+so a 20 ms encoder pulse produces whole wheel units instead of discarded
+fractions. These actions are
 repeated on every active layer to reproduce Vial transparent encoder bindings.
 Confirm direction on the physical hardware; the two firmware implementations
 may interpret encoder wiring differently. Left click is play/pause, right click
